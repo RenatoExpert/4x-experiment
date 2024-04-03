@@ -22,10 +22,10 @@ public class App {
 		OpcUaOperations opcUaOperations = new OpcUaTemplate();
 		//connect using our profile
 		opcUaOperations.connect(connectionProfile)
-		.doOnError(throwable -> logger.error("Unable to connect", throwable))
+		//.doOnError(throwable -> logger.error("Unable to connect", throwable))
 		.ignoreElement().blockingAwait();
 
-		opcDaOperations.browseTags().foreachBlocking(System.out::println);
+		opcUaOperations.browseTags().foreachBlocking(System.out::println);
 	}
 }
 
