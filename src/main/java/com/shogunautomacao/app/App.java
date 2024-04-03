@@ -25,7 +25,6 @@ public class App {
 		//.doOnError(throwable -> logger.error("Unable to connect", throwable))
 		.ignoreElement().blockingAwait();
 
-		opcUaOperations.browseTags().foreachBlocking(System.out::println);
 	}
 }
 
