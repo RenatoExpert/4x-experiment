@@ -1,7 +1,8 @@
 package com.shogunautomacao.app;
 
-import com.hurence.opc.ua.*;
-import com.hurence.opc.*;
+import com.hurence.opc.ua.OpcUaConnectionProfile;
+import com.hurence.opc.ua.OpcUaOperations;
+import com.hurence.opc.ua.OpcUaTemplate;
 import java.net.URI;
 import java.time.Duration;
 
