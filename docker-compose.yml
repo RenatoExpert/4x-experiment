@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  client:
+    container_name: opc_client
+    image: opc_client
+    build: .
+
