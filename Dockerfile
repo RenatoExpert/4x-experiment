@@ -7,5 +7,5 @@ COPY src/assembly src/assembly
 RUN mvn install
 COPY . .
 RUN mvn package
-CMD java -cp target/opc-1.0-SNAPSHOT.jar com.shogunautomacao.app.App
+CMD java -cp target/opc-ua-stack-examples-1.4.1.1-SNAPSHOT.jar org.opcfoundation.ua.opc-ua-stack-examples
 
