@@ -115,7 +115,7 @@ public class ClientServerExample {
 
     // Get Endpoints like this
     String uri;
-    uri = "opc.tcp://localhost:8666/UAExample";
+    uri = "opc.tcp://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
     // uri = "opc.https://localhost:8443/UAExample";
 
     SessionChannel myChannel = null;
