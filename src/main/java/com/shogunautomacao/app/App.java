@@ -1,5 +1,10 @@
 package com.shogunautomacao.app;
 
+import com.hurence.opc.ua.*;
+import com.hurence.opc.*;
+import java.net.URI;
+import java.time.Duration;
+
 public class App {
 	public static void main(String[] args) throws Exception {
 		String host = "opc.tcp://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
