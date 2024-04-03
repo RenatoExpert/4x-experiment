@@ -8,13 +8,6 @@
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
  </properties>
   
- <repositories>
-	<repository>
-		<id>cern</id>
-		<name>CERN</name>
-		<url>https://nexus.web.cern.ch/nexus/content/repositories/public/</url>
-	</repository>
- </repositories>
   <dependencies>
   	<dependency>
   		<groupId>org.opcfoundation.ua</groupId>
