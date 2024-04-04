@@ -7,5 +7,5 @@ RUN mvn install
 COPY . .
 RUN mvn package
 
-CMD java -cp target/opcua-1.0-SNAPSHOT.jar org.scadalts.opcua.Main
+CMD java -cp target/opcua-1.0-SNAPSHOT.jar org.scadalts.Main
 
