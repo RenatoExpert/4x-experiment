@@ -8,14 +8,14 @@ public class Main {
 			.getConnection(url);
 
 		if(plcConnection.isConnected()) {
-			logger.info("CONNECTED");
+			System.out.println("CONNECTED");
 		}
 
 		PlcBrowseRequest plcBrowseRequest = plcConnection.browseRequestBuilder().build();
 		CompletableFuture<? extends PlcBrowseResponse> plcResponse = plcBrowseRequest.execute();
 
 		plcResponse.thenAccept(a -> {
-			logger.info("Res: " + a);
+			System.out.println("Res: " + a);
 		});
 	}
 }
