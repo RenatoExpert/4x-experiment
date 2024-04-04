@@ -2,9 +2,10 @@ package org.scadalts.opc;
 
 public class Main {
 	public static void main(String[] args) throws PlcConnectionException {
+		String url = "opc.tcp://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
 		PlcConnection plcConnection = PlcDriverManager.getDefault()
 			.getConnectionManager()
-			.getConnection("opcua:tcp://127.0.0.1:50000");
+			.getConnection(url);
 
 		if(plcConnection.isConnected()) {
 			logger.info("CONNECTED");
@@ -18,3 +19,4 @@ public class Main {
 		});
 	}
 }
+
