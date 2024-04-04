@@ -2,10 +2,11 @@ package org.scadalts;
 
 import java.util.concurrent.CompletableFuture;
 
-import org.apache.plc4x.java.api.PlcConnection;
 import org.apache.plc4x.java.api.PlcDriverManager;
-import org.apache.plc4x.java.api.messages.PlcBrowseRequest;
-import org.apache.plc4x.java.api.messages.PlcBrowseResponse;
+import org.apache.plc4x.java.*;
+import org.apache.plc4x.java.api.*;
+import org.apache.plc4x.java.api.messages.*;
+import org.apache.plc4x.java.api.exceptions.*;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
