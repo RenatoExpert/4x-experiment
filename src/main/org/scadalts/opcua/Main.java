@@ -1,4 +1,4 @@
-package org.scadalts.opc;
+package org.scadalts.opcua;
 
 public class Main {
 	public static void main(String[] args) throws PlcConnectionException {
