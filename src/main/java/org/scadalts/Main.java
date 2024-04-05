@@ -26,7 +26,11 @@ public class Main {
 			System.out.println("Hello");
 			ClassLoader currentId = Thread.currentThread().getContextClassLoader();
 			System.out.println(currentId);
-			//PlcDriverManager driver = PlcDriverManager.getDefault();
+			try {
+				PlcDriverManager driver = PlcDriverManager.getDefault();
+			} catch (Exception ex) {
+				System.out.print("We got an error while connecting to plc");
+			}
 			//.getDriver("opcua");
         	/*
         	PlcConnection plcConnection = driver.getConnection(url);
