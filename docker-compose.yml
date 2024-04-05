@@ -5,7 +5,4 @@ services:
     container_name: opc_client
     image: opc_client:latest
     build: .
-    volumes:
-      - ./.cache/maven:/root/.m2
-      - ./.cache/target:./target
 
