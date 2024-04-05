@@ -7,7 +7,6 @@ RUN --mount=type=cache,target=/root/.m2/	\
 
 COPY ./src ./src
 RUN --mount=type=cache,target=/root/.m2/	\
-	--mount=type=cache,target=./target/	\
 	mvn package -T 4
 
 CMD java -cp target/opcua-1.0-SNAPSHOT.jar org.scadalts.Main
