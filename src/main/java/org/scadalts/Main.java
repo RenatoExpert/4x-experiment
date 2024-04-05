@@ -17,9 +17,7 @@ public class Main {
 	public static void main(String[] args) throws PlcConnectionException {
 		String url = "opcua://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
 		System.out.println("Hello");
-		Set<String> codes = PlcDriverManager.getDefault().getProtocolCodes();
-		Iterator<String> codesIterator = codes.iterator();
-		codesIterator.forEachRemaining(System.out::println);
+		PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
         /*
         PlcConnection plcConnection = driver.getConnection(url);
 
