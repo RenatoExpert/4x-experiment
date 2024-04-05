@@ -40,6 +40,12 @@
 		<artifactId>plc4j-protocol-driver-base</artifactId>
 		<version>0.6.0</version>
 	</dependency>
+	<dependency>
+		<groupId>org.apache.plc4x</groupId>
+		<artifactId>plc4j-spi</artifactId>
+		<version>0.12.0</version>
+	</dependency>
+
 
 
         <dependency>
