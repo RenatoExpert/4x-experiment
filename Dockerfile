@@ -3,11 +3,11 @@ WORKDIR /app
 
 COPY pom.xml .
 RUN --mount=type=cache,target=/root/.m2/	\
-	mvn install -T 4
+	mvn install
 
 COPY ./src ./src
 RUN --mount=type=cache,target=/root/.m2/	\
-	mvn package -T 4
+	mvn package
 
 CMD java -cp target/opcua-1.0-SNAPSHOT.jar org.scadalts.Main
 
