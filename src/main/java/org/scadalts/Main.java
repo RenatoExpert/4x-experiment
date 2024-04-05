@@ -21,9 +21,7 @@ public class Main {
 		PlcBrowseRequest plcBrowseRequest = plcConnection.browseRequestBuilder().build();
 		CompletableFuture<? extends PlcBrowseResponse> plcResponse = plcBrowseRequest.execute();
 
-		plcResponse.thenAccept(a -> {
-			System.out.println("Res: " + a);
-		});
+		plcResponse.thenAccept(a -> System.out.println("Res: " + a));
 	}
 }
 
