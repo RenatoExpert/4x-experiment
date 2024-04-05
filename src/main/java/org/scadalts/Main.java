@@ -15,7 +15,7 @@ import org.slf4j.Marker;
 
 
 public class Main {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		System.out.println("Hello dude!");
 		new Thread(connect).start();
 		new Thread(connect).start();
