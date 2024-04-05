@@ -18,12 +18,13 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Hello dude!");
 		new Thread(connect).start();
+		new Thread(connect).start();
 	}
 	private static Runnable connect = new Runnable() {
 		public void run() {
 			String url = "opcua://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
 			System.out.println("Hello");
-			long currentId = Thread.currentThread().threadId();
+			ClassLoader currentId = Thread.currentThread().getContextClassLoader();
 			System.out.println(currentId);
 			//PlcDriverManager driver = PlcDriverManager.getDefault();
 			//.getDriver("opcua");
