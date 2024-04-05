@@ -6,5 +6,5 @@ services:
     image: opc_client:latest
     build: .
     volumes:
-      - ./maven_cache:~/.m2
+      - ./.cache:/root/.m2
 
