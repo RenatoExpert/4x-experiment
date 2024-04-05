@@ -11,10 +11,13 @@ import java.sql.DatabaseMetaData;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Marker;
 
 public class Main {
 	public static void main(String[] args) throws PlcConnectionException {
+		Logger parentLogger = LogManager.getLogger();
 		String url = "opcua://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
 		System.out.println("Hello");
 		PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
