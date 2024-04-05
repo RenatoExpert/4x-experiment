@@ -1,4 +1,4 @@
-FROM maven:3.9.6-eclipse-temurin-11-alpine as compiler
+FROM maven:amazoncorretto as compiler
 WORKDIR /app
 COPY .cache/maven /root/.m2 
 
