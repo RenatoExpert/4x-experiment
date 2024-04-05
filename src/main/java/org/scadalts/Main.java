@@ -11,9 +11,10 @@ import java.sql.DatabaseMetaData;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.Marker;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class Main {
 	public static void main(String[] args) throws PlcConnectionException {
