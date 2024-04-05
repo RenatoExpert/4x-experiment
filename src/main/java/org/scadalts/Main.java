@@ -11,11 +11,11 @@ import java.util.concurrent.CompletableFuture;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
 
 
 public class Main {
 	public static void main(String[] args) throws PlcConnectionException {
-		Logger logger = Logger();
 		String url = "opcua://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
 		System.out.println("Hello");
 		PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
