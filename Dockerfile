@@ -1,4 +1,4 @@
-FROM maven:3.9.6-amazoncorretto-11 as compiler
+FROM maven:3.9.6-eclipse-temurin-11-alpine as compiler
 WORKDIR /app
 
 COPY pom.xml .
