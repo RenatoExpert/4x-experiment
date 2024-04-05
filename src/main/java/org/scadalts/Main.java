@@ -29,7 +29,7 @@ public class Main {
 			try {
 				PlcDriverManager driver = PlcDriverManager.getDefault();
 			} catch (Exception ex) {
-				System.out.print("We got an error while connecting to plc");
+				System.out.println("We got an error while connecting to plc");
 			}
 			//.getDriver("opcua");
         	/*
