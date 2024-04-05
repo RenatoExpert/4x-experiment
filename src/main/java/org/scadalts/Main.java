@@ -3,6 +3,7 @@ package org.scadalts;
 import org.apache.plc4x.java.api.PlcConnection;
 import org.apache.plc4x.java.api.PlcDriver;
 import org.apache.plc4x.java.api.PlcDriverManager;
+import org.apache.plc4x.java.DefaultPlcDriverManager;
 import org.apache.plc4x.java.api.exceptions.PlcConnectionException;
 import org.apache.plc4x.java.api.messages.PlcBrowseRequest;
 import org.apache.plc4x.java.api.messages.PlcBrowseResponse;
@@ -27,7 +28,7 @@ public class Main {
 			ClassLoader currentId = Thread.currentThread().getContextClassLoader();
 			System.out.println(currentId);
 			try {
-				PlcDriverManager driver = PlcDriverManager.getDefault();
+				PlcDriverManager driver = new DefaultPlcDriverManager();
 			} catch (Exception ex) {
 				System.out.println("We got an error while connecting to plc");
 			}
