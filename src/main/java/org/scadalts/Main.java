@@ -17,18 +17,18 @@ import org.slf4j.Marker;
 
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Hello dude!");
-		new Thread(connect).start();
+		System.out.println("Starting App");
 		new Thread(connect).start();
 	}
 	private static Runnable connect = new Runnable() {
 		public void run() {
 			String url = "opcua://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
-			System.out.println("Hello");
+			System.out.println("Starting Thread");
 			ClassLoader currentId = Thread.currentThread().getContextClassLoader();
 			System.out.println(currentId);
 			try {
 				PlcDriverManager driver = new DefaultPlcDriverManager();
+				System.out.println("Connected with success!");
 			} catch (Exception ex) {
 				System.out.println("We got an error while connecting to plc");
 			}
