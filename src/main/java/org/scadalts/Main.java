@@ -29,7 +29,7 @@ public class Main {
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
 				PlcConnection connection = driver.getConnection(url);
-				connection.connect();
+				connection.ping();
 				if(connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
