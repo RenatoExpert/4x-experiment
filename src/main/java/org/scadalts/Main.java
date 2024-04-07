@@ -9,6 +9,7 @@ import org.apache.plc4x.java.DefaultPlcDriverManager;
 import org.apache.plc4x.java.api.exceptions.PlcConnectionException;
 import org.apache.plc4x.java.api.messages.PlcBrowseRequest;
 import org.apache.plc4x.java.api.messages.PlcBrowseResponse;
+import org.apache.plc4x.java.api.metadata.PlcDriverMetadata;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
