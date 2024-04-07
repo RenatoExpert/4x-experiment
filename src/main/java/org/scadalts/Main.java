@@ -32,8 +32,6 @@ public class Main {
 			System.out.println("Starting Thread");
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
-				PlcDriverMetadata metadata = driver.getMetadata();
-				System.out.println(metadata);
 				PlcConnection connection = driver.getConnection(url);
 				PlcBrowseRequest.Builder builder = connection.browseRequestBuilder();
 				PlcBrowseRequest request = builder.build();
