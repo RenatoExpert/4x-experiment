@@ -43,6 +43,7 @@ public class Main {
 				System.out.println("We got an error while connecting to plc");
 				System.out.println(ex.getMessage());
 				System.out.println(ex);
+			}
 			
 			//.getDriver("opcua");
         	/*
