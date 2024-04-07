@@ -35,7 +35,7 @@ public class Main {
 				}
 			} catch (Exception ex) {
 				System.out.println("We got an error while connecting to plc");
-				System.out.println(ex.getCause().getMessage());
+				System.out.println(ex.getMessage());
 			}
 			//.getDriver("opcua");
         	/*
