@@ -26,7 +26,7 @@ public class Main {
 			System.out.println("Starting Thread");
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
-				PlcConnection plcConnection = driver.getConnectionManager().getConnection(url);
+				PlcConnection plcConnection = driver.getConnection(url);
 				System.out.println("Connected with success!");
 			} catch (Exception ex) {
 				System.out.println("We got an error while connecting to plc");
