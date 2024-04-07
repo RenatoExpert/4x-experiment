@@ -36,6 +36,9 @@ public class Main {
 				PlcReadRequest request = builder.build();
 				//CompletableFuture<? extends PlcResponse> asyncResponse = request.execute();
 				PlcResponse response = request.execute().get(5000, TimeUnit.MILLISECONDS);
+				for(String tagName: response.getTagNames()) {
+					System.out.println(tagName);
+				}
 				if(connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
