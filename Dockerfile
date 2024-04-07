@@ -7,7 +7,7 @@ RUN --mount=type=cache,target=/root/.m2/	\
 
 COPY ./src ./src
 RUN --mount=type=cache,target=/root/.m2/	\
-	mvn package
+	mvn clean install
 
 CMD java -jar target/opcua-1.0-SNAPSHOT.jar
 
