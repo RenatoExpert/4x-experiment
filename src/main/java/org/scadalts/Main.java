@@ -2,6 +2,7 @@ package org.scadalts;
 
 import org.apache.plc4x.java.api.PlcConnection;
 import org.apache.plc4x.java.api.messages.PlcReadRequest;
+import org.apache.plc4x.java.api.messages.PlcResponse;
 import org.apache.plc4x.java.api.PlcDriver;
 import org.apache.plc4x.java.api.PlcDriverManager;
 import org.apache.plc4x.java.DefaultPlcDriverManager;
@@ -32,6 +33,7 @@ public class Main {
 				PlcConnection connection = driver.getConnection(url);
 				PlcReadRequest.Builder builder = connection.readRequestBuilder();
 				PlcReadRequest request = builder.build();
+				CompletableFuture<? extends PlcResponse> asyncResponse = request.execute();
 				if(connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
