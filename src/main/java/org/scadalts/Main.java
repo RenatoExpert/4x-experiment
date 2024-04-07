@@ -25,7 +25,7 @@ public class Main {
 			String url = "opcua://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
 			System.out.println("Starting Thread");
 			try {
-				PlcDriver driver = new PlcDriverManager.getDefault().getDriver("opcua");
+				PlcDriver driver = new PlcDriverManager().getDefault().getDriver("opcua");
 				PlcConnection plcConnection = driver.getConnectionManager().getConnection(url);
 				System.out.println("Connected with success!");
 			} catch (Exception ex) {
