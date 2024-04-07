@@ -33,7 +33,8 @@ public class Main {
 				PlcConnection connection = driver.getConnection(url);
 				PlcReadRequest.Builder builder = connection.readRequestBuilder();
 				PlcReadRequest request = builder.build();
-				CompletableFuture<? extends PlcResponse> asyncResponse = request.execute();
+				//CompletableFuture<? extends PlcResponse> asyncResponse = request.execute();
+				PlcResponse response = request.execute().get(5000, TimeUnit.MILLISECONDS);
 				if(connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
