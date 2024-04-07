@@ -32,13 +32,9 @@ public class Main {
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
 				PlcConnection connection = driver.getConnection(url);
-				PlcReadRequest.Builder builder = connection.readRequestBuilder();
-				PlcReadRequest request = builder.build();
-				//CompletableFuture<? extends PlcResponse> asyncResponse = request.execute();
-				PlcResponse response = request.execute().get(5000, TimeUnit.MILLISECONDS);
-				for(String tagName: response.getTagNames()) {
-					System.out.println(tagName);
-				}
+				PlcBrowseRequest.Builder builder = connection.browseRequestBuilder();
+				PlcBrowseRequest request = builder.build();
+				PlcBrowseResponse response = request.execute().get(5000, TimeUnit.MILLISECONDS);
 				if(connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
