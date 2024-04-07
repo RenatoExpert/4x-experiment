@@ -24,8 +24,6 @@ public class Main {
 		public void run() {
 			String url = "opcua://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
 			System.out.println("Starting Thread");
-			ClassLoader currentId = Thread.currentThread().getContextClassLoader();
-			System.out.println(currentId);
 			try {
 				PlcDriverManager driver = new DefaultPlcDriverManager();
 				System.out.println("Connected with success!");
