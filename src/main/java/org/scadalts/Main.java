@@ -1,7 +1,7 @@
 package org.scadalts;
 
 import org.apache.plc4x.java.api.PlcConnection;
-import org.apache.plc4x.java.api.PlcReaderRequest;
+import org.apache.plc4x.java.api.messages.PlcReadRequest;
 import org.apache.plc4x.java.api.PlcDriver;
 import org.apache.plc4x.java.api.PlcDriverManager;
 import org.apache.plc4x.java.DefaultPlcDriverManager;
@@ -30,7 +30,7 @@ public class Main {
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
 				PlcConnection connection = driver.getConnection(url);
-				PlcReaderRequest.Builder builder = connection.readRequestBuilder();
+				PlcReadRequest.Builder builder = connection.readRequestBuilder();
 				if(connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
