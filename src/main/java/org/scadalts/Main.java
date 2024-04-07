@@ -26,18 +26,25 @@ public class Main {
 			System.out.println("Starting Thread");
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
-				PlcConnection plcConnection = driver.getConnection(url);
-				System.out.println("Connected with success!");
+				PlcConnection connection = driver.getConnection(url);
+				if(connection.isConnected()) {
+					System.out.println("Connected with success!");
+				} else {
+					System.out.println("Not connected for unknown reason");
+				}
 			} catch (Exception ex) {
 				System.out.println("We got an error while connecting to plc");
 			}
 			//.getDriver("opcua");
         	/*
 
+		           PlcBrowseRequest plcBrowseRequest = plcConnection.browseRequestBuilder().build();
+        CompletableFuture<? extends PlcBrowseResponse> plcResponse = plcBrowseRequest.execute();
 
-        	if(plcConnection.isConnected()) {
-				System.out.println("CONNECTED");
-			}
+        plcResponse.thenAccept(a -> {
+            logger.info("Res: " + a);
+        });
+
 
 			PlcBrowseRequest plcBrowseRequest = plcConnection.browseRequestBuilder().build();
 			CompletableFuture<? extends PlcBrowseResponse> plcResponse = plcBrowseRequest.execute();
