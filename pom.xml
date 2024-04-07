@@ -79,15 +79,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <configuration>
-                    <usedDependencies>
-                        <dependency>org.slf4j:slf4j-simple</dependency>
-                    </usedDependencies>
-                </configuration>
-            </plugin>
 	      <plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-jar-plugin</artifactId>
