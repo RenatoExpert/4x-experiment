@@ -31,6 +31,7 @@ public class Main {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
 				PlcConnection connection = driver.getConnection(url);
 				PlcReadRequest.Builder builder = connection.readRequestBuilder();
+				PlcReadRequest request = builder.build();
 				if(connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
