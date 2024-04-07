@@ -48,23 +48,15 @@ public class Main {
 				System.out.println(ex.getMessage());
 				System.out.println(ex);
 			}
-			
-			//.getDriver("opcua");
         	/*
-
-		           PlcBrowseRequest plcBrowseRequest = plcConnection.browseRequestBuilder().build();
-        CompletableFuture<? extends PlcBrowseResponse> plcResponse = plcBrowseRequest.execute();
-
-        plcResponse.thenAccept(a -> {
-            logger.info("Res: " + a);
-        });
-
-
 			PlcBrowseRequest plcBrowseRequest = plcConnection.browseRequestBuilder().build();
 			CompletableFuture<? extends PlcBrowseResponse> plcResponse = plcBrowseRequest.execute();
-
+			plcResponse.thenAccept(a -> {
+			    logger.info("Res: " + a);
+			});
+			PlcBrowseRequest plcBrowseRequest = plcConnection.browseRequestBuilder().build();
+			CompletableFuture<? extends PlcBrowseResponse> plcResponse = plcBrowseRequest.execute();
 			plcResponse.thenAccept(a -> System.out.println("Res: " + a));
-
         	 */
 		}
 	};
