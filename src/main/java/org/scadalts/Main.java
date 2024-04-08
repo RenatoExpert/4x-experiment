@@ -28,9 +28,7 @@ public class Main {
 	}
 	private static Runnable connect = new Runnable() {
 		public void run() {
-			//String url = "opcua:tcp://ec2-3-93-58-9.compute-1.amazonaws.com:4840/";
-			//String url = "opcua:tcp://opcuaserver.com:48010/?discovery=false";
-			String url = "opcua:tcp://173.183.147.103:48010/?discovery=false";
+			String url = "opcua:tcp://server:4840/?discovery=true";
 			System.out.println("Starting Thread");
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
