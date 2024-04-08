@@ -28,7 +28,7 @@ services:
     networks:
       - opc_net
     healthcheck:
-      test: echo "exit()" | uaclient -u ec2-3-93-58-9.compute-1.amazonaws.com:4840
+      test: echo "exit()" | /root/.local/bin/uaclient -u ec2-3-93-58-9.compute-1.amazonaws.com:4840
       interval: 5s
       timeout: 10s
       retries: 10
