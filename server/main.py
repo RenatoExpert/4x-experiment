@@ -13,7 +13,7 @@ if __name__ == "__main__":
     server.set_endpoint("opc.tcp://0.0.0.0:4840/")
     server.set_server_name("Argus OPC Server");
     server.set_security_policy([ua.SecurityPolicyType.NoSecurity])
-    server.load_certificate("./sec/public.der")
+    #server.load_certificate("./sec/public.der")
     #server.set_security_policy([
     #    ua.SecurityPolicyType.NoSecurity,
     #    ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt,
