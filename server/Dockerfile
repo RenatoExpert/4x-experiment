@@ -3,5 +3,5 @@ RUN pip install cryptography lxml pytz
 RUN pip install opcua
 WORKDIR /server
 COPY main.py .
-ENTRYPOINT ./main.py
+CMD python3 /server/main.py
 
