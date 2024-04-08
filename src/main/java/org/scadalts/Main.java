@@ -34,7 +34,8 @@ public class Main {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
 				PlcConnection connection = driver.getConnection(url);
 				System.out.println(connection.getMetadata().isReadSupported());
-				PlcReadRequest.Builder builder = plcConnection.readRequestBuilder();
+
+				PlcReadRequest.Builder builder = connection.readRequestBuilder();
 				builder.addTagAddress("value-1", "%Q0.4:BOOL");
 				builder.addTagAddress("value-2", "%Q0:BYTE");
 				builder.addTagAddress("value-3", "%I0.2:BOOL");
