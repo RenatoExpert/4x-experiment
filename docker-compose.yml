@@ -19,6 +19,12 @@ services:
       - server
     networks:
       - opc_net
+    healthcheck:
+      test: echo "exit()" | uaclient -u ec2-3-93-58-9.compute-1.amazonaws.com:4840
+      interval: 3s
+      timeout: 2s
+      retries: 10
+      start_period: 3s
       
   server:
     container_name: opc_server
