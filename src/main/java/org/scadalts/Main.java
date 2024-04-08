@@ -26,7 +26,7 @@ public class Main {
 		System.out.println("Starting App");
 		new Thread(connect).start();
 	}
-	private static Runnable connect = new Runnable() {
+	private Runnable connect = new Runnable() {
 		public void run() {
 			String url = "opcua:tcp://opcuaserver.com:48010?discovery=false";
 			System.out.println("Starting Thread");
