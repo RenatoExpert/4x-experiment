@@ -28,6 +28,11 @@ public class Socket {
 			try {
 				PlcConnection connection = PlcDriverManager.getDefault().getConnectionManager().getConnection(url);
 				System.out.println(connection.getMetadata().isReadSupported());
+				if (connection.isConnected()) {
+					System.out.println("Connected with success!");
+				} else {
+					System.out.println("Connection not estabilished!");
+				}
 
 				PlcReadRequest request = connection.readRequestBuilder().build();
 				CompletableFuture<? extends PlcResponse> responseFuture = request.execute();
