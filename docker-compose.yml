@@ -11,24 +11,10 @@ services:
     networks:
       - opc_net
 
-  check:
-    container_name: opc_check
-    image: opc_check
-    build: ./check
-    depends_on:
-      - server
-    networks:
-      - opc_net
-    healthcheck:
-      test: echo "exit()" | uaclient -u ec2-3-93-58-9.compute-1.amazonaws.com:4840
-      interval: 3s
-      timeout: 2s
-      retries: 10
-      start_period: 3s
-      
   server:
     container_name: opc_server
-    image: mcr.microsoft.com/iotedge/opc-plc:latest
+    image: opc_server:latest
+    build: ./server
     ports:
       - 4840:4840
       - 8080:8080
@@ -42,12 +28,11 @@ services:
     networks:
       - opc_net
     healthcheck:
-      test: ["CMD", "nc", "-zv", "127.0.0.1", "4840", "8080"]
-      interval: 1s
-      timeout: 1s
+      test: echo "exit()" | uaclient -u ec2-3-93-58-9.compute-1.amazonaws.com:4840
+      interval: 5s
+      timeout: 10s
       retries: 10
       start_period: 3s
-      start_interval: 1s
 
 networks:
   opc_net:
