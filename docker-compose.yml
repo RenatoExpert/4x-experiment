@@ -6,7 +6,8 @@ services:
     image: opc_client:latest
     build: .
     depends_on:
-      - check
+      check:
+        condition: service_healthy
     networks:
       - opc_net
 
