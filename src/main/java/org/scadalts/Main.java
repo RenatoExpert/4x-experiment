@@ -35,7 +35,28 @@ public class Main {
 				PlcConnection connection = driver.getConnection(url);
 				System.out.println(connection.getMetadata().isReadSupported());
 
+				PlcReadRequest request = connection.readRequestBuilder().build();
+				CompletableFuture<? extends PlcResponse> plcResponse = request.execute();
+				PlcResponse response = plcResponse.get(5000, TimeUnit.MILLISECONDS);
+				
+
 				/*
+
+
+				           try (PlcConnection connection = PlcDriverManager.getDefault()
+                .getConnectionManager()
+                //.getConnection("opcua:tcp://127.0.0.1:50000?discovery=false");
+                .getConnection("opcua:tcp://opcuaserver.com:48010?discovery=false")) {
+
+            if (connection.isConnected()) {
+                logger.info("CONNECTED");
+            }
+
+            PlcReadRequest request = connection.readRequestBuilder().build();
+            CompletableFuture<? extends PlcResponse> plcResponse = request.execute();
+            PlcResponse response = plcResponse.get(5000, TimeUnit.MILLISECONDS);
+            logger.info("Res: " + response);
+        }
 				PlcReadRequest.Builder builder = connection.readRequestBuilder();
 				builder.addTagAddress("value-1", "ns=2;i=5");
 				PlcReadRequest request = builder.build();
