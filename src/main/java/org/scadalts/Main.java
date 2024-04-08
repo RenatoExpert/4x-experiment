@@ -38,12 +38,11 @@ public class Main {
 				System.out.println(connection.getMetadata().isReadSupported());
 
 				PlcReadRequest.Builder builder = connection.readRequestBuilder();
-				builder.addTagAddress("value-1", "%Q0.4:BOOL");
-				builder.addTagAddress("value-2", "%Q0:BYTE");
-				builder.addTagAddress("value-3", "%I0.2:BOOL");
-				builder.addTagAddress("value-4", "%DB.DB1.4:INT");
+				builder.addTagAddress("value-1", "ns=2;i=5");
 				PlcReadRequest request = builder.build();
-				PlcReadResponse response = request.execute().get(5000, TimeUnit.MILLISECONDS);
+				CompletableFuture<? extends PlcReadResponse> futureResponse = request.execute();
+				futureResponse.get();
+			
 				if(connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
