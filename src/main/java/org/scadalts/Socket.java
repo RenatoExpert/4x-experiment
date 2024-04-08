@@ -39,7 +39,7 @@ public class Socket {
 					PlcReadRequest.Builder builder = connection.readRequestBuilder();
 					builder.addTagAddress("value-1", "ns=2;i=5");
 					PlcReadRequest request = builder.build();
-					CompletableFuture<? extends PlcResponse> responseFuture = request.execute();
+					CompletableFuture<? extends PlcReadResponse> responseFuture = request.execute();
 					PlcReadResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
 					System.out.println("Response:" + response);
 					for (String tagName: response.getTagNames()) {
