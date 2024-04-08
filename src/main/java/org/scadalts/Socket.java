@@ -42,6 +42,9 @@ public class Socket {
 					CompletableFuture<? extends PlcResponse> responseFuture = request.execute();
 					PlcResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
 					System.out.println("Response:" + response);
+					for (String tagName: response.getTagNames()) {
+						System.out.println(tagName);
+					}
 				} else {
 					System.out.println("Read function is NOT supported!");
 				}
