@@ -30,8 +30,8 @@ public class Socket {
 				System.out.println(connection.getMetadata().isReadSupported());
 
 				PlcReadRequest request = connection.readRequestBuilder().build();
-				CompletableFuture<? extends PlcResponse> response = request.execute();
-				PlcResponse response = response.get(5000, TimeUnit.MILLISECONDS);
+				CompletableFuture<? extends PlcResponse> responseFuture = request.execute();
+				PlcResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
 			} catch (Exception ex) {
 				System.out.println("We got an error while connecting to plc");
 				System.out.println(ex.getMessage());
