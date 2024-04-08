@@ -5,6 +5,8 @@ services:
     container_name: opc_client
     image: opc_client:latest
     build: .
+    depends_on:
+      - server
 
   server:
     container_name: opc_server
