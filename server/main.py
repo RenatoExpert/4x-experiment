@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from opcua import ua, Server, instantiate
 import sys
 import time
