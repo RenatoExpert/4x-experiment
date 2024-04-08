@@ -16,13 +16,6 @@ services:
     build: ./check
     depends_on:
       - server
-    healthcheck:
-      test: 'echo "exit()" | uaclient -u server:4840'
-      interval: 1s
-      timeout: 1s
-      retries: 10
-      start_period: 3s
-      start_interval: 1s
     networks:
       - opc_net
       
