@@ -19,7 +19,7 @@ if __name__ == "__main__":
     #    ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt,
     #    ua.SecurityPolicyType.Basic256Sha256_Sign])
     # setup our own namespace, not really necessary but should as spec
-    #uri = "bahiagas"
+    uri = "brahmaget"
     idx = server.register_namespace(uri)
     # get Objects node, this is where we should put our nodes
     objects = server.get_objects_node()
