@@ -23,7 +23,7 @@ import org.slf4j.Marker;
 public class Socket {
 	public static Runnable connect = new Runnable() {
 		public void run() {
-			String url = "opcua:tcp://opcuaserver.com:48010?discovery=false";
+			String url = "opcua:tcp://server:4840?discovery=true";
 			System.out.println("Starting Thread");
 			try {
 				PlcConnection connection = PlcDriverManager.getDefault().getConnectionManager().getConnection(url);
