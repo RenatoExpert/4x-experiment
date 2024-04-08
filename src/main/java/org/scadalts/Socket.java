@@ -44,6 +44,7 @@ public class Socket {
 					System.out.println("Response:" + response);
 					for (String tagName: response.getTagNames()) {
 						System.out.println(tagName);
+						System.out.println(response.getObject(tagName));
 					}
 				} else {
 					System.out.println("Read function is NOT supported!");
