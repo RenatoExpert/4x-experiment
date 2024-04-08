@@ -5,13 +5,18 @@ services:
     container_name: opc_client
     image: opc_client:latest
     build: .
+
   server:
     container_name: opc_server
     image: mcr.microsoft.com/iotedge/opc-plc:latest
     ports:
-      - 4840:50000
+      - 4840:4840
       - 8080:8080
-    command: "--autoaccept"
+    command: "--autoaccept
+      --sph --sn=5 sr=10
+      --st=uint --fn=5 --fr=1
+      --ft=uint --gn=5 
+      --pn=4840"
     volumes:
       - ./server/:/app/config
 
