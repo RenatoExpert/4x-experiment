@@ -7,6 +7,8 @@ services:
     build: .
     depends_on:
       - server
+    networks:
+      - opc_net
 
   server:
     container_name: opc_server
@@ -21,4 +23,10 @@ services:
       --pn=4840"
     volumes:
       - ./server/:/app/config
+    networks:
+      - opc_net
+
+networks:
+  opc_net:
+    driver: bridge
 
