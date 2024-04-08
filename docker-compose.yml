@@ -23,7 +23,7 @@ services:
     container_name: opc_server
     image: mcr.microsoft.com/iotedge/opc-plc:latest
     ports:
-      - 4840:4840
+      - 4840:4845
       - 8080:8080
     command: "--autoaccept
       --sph --sn=5 sr=10
