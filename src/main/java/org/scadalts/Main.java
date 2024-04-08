@@ -33,6 +33,7 @@ public class Main {
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
 				PlcConnection connection = driver.getConnection(url);
+				System.out.println(connection.getMetadata().isReadSupported());
 				PlcBrowseRequest.Builder builder = connection.browseRequestBuilder();
 				PlcBrowseRequest request = builder.build();
 				PlcBrowseResponse response = request.execute().get(5000, TimeUnit.MILLISECONDS);
