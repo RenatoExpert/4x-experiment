@@ -41,6 +41,12 @@ public class Main {
 				builder.addTagAddress("value-1", "ns=2;i=5");
 				PlcReadRequest request = builder.build();
 				CompletableFuture<? extends PlcReadResponse> futureResponse = request.execute();
+				futureResponse.handle((content, error) {
+					if(error) {
+						System.out.println("Found an error!");
+						System.out.println(error);
+					}
+				});
 				futureResponse.get();
 			
 				if(connection.isConnected()) {
