@@ -35,6 +35,7 @@ public class Main {
 				PlcConnection connection = driver.getConnection(url);
 				System.out.println(connection.getMetadata().isReadSupported());
 
+				/*
 				PlcReadRequest.Builder builder = connection.readRequestBuilder();
 				builder.addTagAddress("value-1", "ns=2;i=5");
 				PlcReadRequest request = builder.build();
@@ -52,6 +53,7 @@ public class Main {
 				} else {
 					System.out.println("Not connected for unknown reason");
 				}
+				*/
 			} catch (Exception ex) {
 				System.out.println("We got an error while connecting to plc");
 				System.out.println(ex.getMessage());
