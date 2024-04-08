@@ -28,7 +28,7 @@ public class Main {
 	}
 	private static Runnable connect = new Runnable() {
 		public void run() {
-			String url = "opcua:tcp://server:4840/?discovery=true";
+			String url = "opcua:tcp://opcuaserver.com:48010?discovery=false";
 			System.out.println("Starting Thread");
 			try {
 				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
