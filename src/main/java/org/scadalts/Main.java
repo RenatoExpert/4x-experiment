@@ -31,8 +31,7 @@ public class Main {
 			String url = "opcua:tcp://opcuaserver.com:48010?discovery=false";
 			System.out.println("Starting Thread");
 			try {
-				PlcDriver driver = PlcDriverManager.getDefault().getDriver("opcua");
-				PlcConnection connection = driver.getConnection(url);
+				PlcConnection connection = PlcDriverManager.getConnectionManager().getConnection(url);
 				System.out.println(connection.getMetadata().isReadSupported());
 
 				PlcReadRequest request = connection.readRequestBuilder().build();
