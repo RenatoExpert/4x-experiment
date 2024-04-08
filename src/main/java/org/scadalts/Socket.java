@@ -27,17 +27,22 @@ public class Socket {
 			System.out.println("Starting Thread");
 			try {
 				PlcConnection connection = PlcDriverManager.getDefault().getConnectionManager().getConnection(url);
-				System.out.println(connection.getMetadata().isReadSupported());
 				if (connection.isConnected()) {
 					System.out.println("Connected with success!");
 				} else {
 					System.out.println("Connection not estabilished!");
 				}
 
-				PlcReadRequest request = connection.readRequestBuilder().build();
-				CompletableFuture<? extends PlcResponse> responseFuture = request.execute();
-				PlcResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
-				System.out.println("Response:" + response);
+				boolean canRead = connection.getMetadata().isReadSupported();
+				if (canRead) {
+					System.out.println("Read function is supported!");
+					PlcReadRequest request = connection.readRequestBuilder().build();
+					CompletableFuture<? extends PlcResponse> responseFuture = request.execute();
+					PlcResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
+					System.out.println("Response:" + response);
+				} else {
+					System.out.println("Read function is NOT supported!");
+				}
 			} catch (Exception ex) {
 				System.out.println("We got an error while connecting to plc");
 				System.out.println(ex.getMessage());
