@@ -25,6 +25,13 @@ services:
       - ./server/:/app/config
     networks:
       - opc_net
+    healthcheck:
+      test: ["CMD", "nc", "-zv", "127.0.0.1", "4840", "8080"]
+      interval: 1s
+      timeout: 1s
+      retries: 10
+      start_period: 3s
+      start_interval: 1s
 
 networks:
   opc_net:
