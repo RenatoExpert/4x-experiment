@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 
 public class Socket {
-	private Runnable connect = new Runnable() {
+	public Runnable connect = new Runnable() {
 		public void run() {
 			String url = "opcua:tcp://opcuaserver.com:48010?discovery=false";
 			System.out.println("Starting Thread");
