@@ -37,6 +37,7 @@ public class Socket {
 				if (canRead) {
 					System.out.println("Read function is supported!");
 					PlcReadRequest.Builder builder = connection.readRequestBuilder();
+					builder.addTagAddress("value-1", "ns=2;i=5");
 					PlcReadRequest request = builder.build();
 					CompletableFuture<? extends PlcResponse> responseFuture = request.execute();
 					PlcResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
