@@ -28,7 +28,7 @@ public class Connection implements AutoCloseable {
 	PlcConnection connection;
 	public Connection (String FullURL) throws Exception {
 		url = FullURL;
-		connection connectionManager = PlcDriverManager.getDefault()
+		connection = PlcDriverManager.getDefault()
 			.getConnectionManager();
 			.getConnection(url);
 		if (connection.isConnected()) {
