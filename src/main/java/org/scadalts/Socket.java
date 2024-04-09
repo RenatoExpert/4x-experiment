@@ -1,6 +1,7 @@
 package org.scadalts;
 
 import org.apache.plc4x.java.api.PlcConnection;
+import org.apache.plc4x.java.api.PlcConnectionManager;
 import org.apache.plc4x.java.api.messages.PlcReadRequest;
 import org.apache.plc4x.java.api.messages.PlcResponse;
 import org.apache.plc4x.java.api.PlcDriver;
