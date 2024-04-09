@@ -5,6 +5,7 @@ import org.scadalts.ReadResponse;
 import org.apache.plc4x.java.api.PlcConnection;
 import org.apache.plc4x.java.api.PlcConnectionManager;
 import org.apache.plc4x.java.api.messages.PlcReadRequest;
+import org.apache.plc4x.java.api.messages.PlcReadResponse;
 import org.apache.plc4x.java.api.messages.PlcResponse;
 import org.apache.plc4x.java.api.PlcDriver;
 import org.apache.plc4x.java.api.PlcDriverManager;
@@ -41,9 +42,9 @@ public class Connection implements AutoCloseable {
 			builder.addTagAddress(tag[0], tag[1]);
 		}
 		PlcReadRequest request = builder.build();
-		CompletableFuture<? extends ReadResponse> responseFuture = request.execute();
-		ReadResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
-		return response;
+		CompletableFuture<? extends PlcReadResponse> responseFuture = request.execute();
+		PlcReadResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
+		return new ReadResponse(response);
 	}
 	public void close() {
 		connection.close();
