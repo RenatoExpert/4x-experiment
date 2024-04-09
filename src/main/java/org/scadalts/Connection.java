@@ -4,6 +4,7 @@ import org.scadalts.ReadResponse;
 
 import org.apache.plc4x.java.api.PlcConnection;
 import org.apache.plc4x.java.api.messages.PlcReadResponse;
+import org.apache.plc4x.java.api.messages.PlcReadRequest;
 import org.apache.plc4x.java.api.PlcDriverManager;
 
 import java.util.concurrent.TimeUnit;
