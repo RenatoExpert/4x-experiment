@@ -26,7 +26,7 @@ import org.slf4j.Marker;
 public class Connection implements AutoCloseable {
 	String url;
 	PlcConnection connection;
-	public Connection (String FullURL) {
+	public Connection (String FullURL) throws Exception {
 		url = FullURL;
 		PlcConnectionManager connectionManager = PlcDriverManager.getDefault().getConnectionManager();
 		connection = connectionManager.getConnection(url);
@@ -36,7 +36,7 @@ public class Connection implements AutoCloseable {
 			System.out.println("Connection not estabilished!");
 		}
 	}
-	public ReadResponse read(String[][] tagList) {
+	public ReadResponse read(String[][] tagList) throws Exception {
 		PlcReadRequest.Builder builder = connection.readRequestBuilder();
 		for (String[] tag: tagList) {
 			builder.addTagAddress(tag[0], tag[1]);
@@ -46,7 +46,7 @@ public class Connection implements AutoCloseable {
 		PlcReadResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
 		return new ReadResponse(response);
 	}
-	public void close() {
+	public void close() throws Exception {
 		connection.close();
 	}
 }
