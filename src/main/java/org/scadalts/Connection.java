@@ -29,7 +29,7 @@ public class Connection implements AutoCloseable {
 	public Connection (String FullURL) throws Exception {
 		url = FullURL;
 		connection = PlcDriverManager.getDefault()
-			.getConnectionManager();
+			.getConnectionManager()
 			.getConnection(url);
 		if (connection.isConnected()) {
 			System.out.println("Connected with success!");
