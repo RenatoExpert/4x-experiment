@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 
-public class Socket {
+public class Connection {
 	public static Runnable connect = new Runnable() {
 		public void run() {
 			String url = "opcua:tcp://server:4840?discovery=false";

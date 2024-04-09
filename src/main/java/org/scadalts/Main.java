@@ -1,6 +1,6 @@
 package org.scadalts;
 
-import org.scadalts.Socket;
+import org.scadalts.Connection;
 
 public class Main {
 	public static void main(String[] args) {
