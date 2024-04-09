@@ -3,20 +3,9 @@ package org.scadalts;
 import org.scadalts.ReadResponse;
 
 import org.apache.plc4x.java.api.PlcConnection;
-import org.apache.plc4x.java.api.PlcConnectionManager;
-import org.apache.plc4x.java.api.messages.PlcReadRequest;
 import org.apache.plc4x.java.api.messages.PlcReadResponse;
-import org.apache.plc4x.java.api.messages.PlcResponse;
-import org.apache.plc4x.java.api.PlcDriver;
 import org.apache.plc4x.java.api.PlcDriverManager;
-import org.apache.plc4x.java.DefaultPlcDriverManager;
-import org.apache.plc4x.java.api.exceptions.PlcConnectionException;
-import org.apache.plc4x.java.api.messages.PlcReadRequest;
-import org.apache.plc4x.java.api.messages.PlcBrowseRequest;
-import org.apache.plc4x.java.api.messages.PlcBrowseResponse;
-import org.apache.plc4x.java.api.metadata.PlcDriverMetadata;
 
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
