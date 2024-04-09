@@ -43,7 +43,7 @@ public class Connection implements AutoCloseable {
 		PlcReadRequest request = builder.build();
 		CompletableFuture<? extends PlcReadResponse> responseFuture = request.execute();
 		ReadResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
-		return new response;
+		return response;
 	}
 	public void close() {
 		connection.close();
