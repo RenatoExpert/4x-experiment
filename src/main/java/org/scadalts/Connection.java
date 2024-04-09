@@ -41,9 +41,9 @@ public class Connection implements AutoCloseable {
 		for (String[] tag: tagList) {
 			builder.addTagAddress(tag[0], tag[1]);
 		}
-		PlcReadRequest request = builder.build();
-		CompletableFuture<? extends PlcReadResponse> responseFuture = request.execute();
-		PlcReadResponse response = responseFuture.get(5000, TimeUnit.MILLISECONDS);
+		PlcReadRequest response = builder.build()
+			.execute()
+			.get(5000, TimeUnit.MILLISECONDS);
 		return new ReadResponse(response);
 	}
 	public void close() throws Exception {
