@@ -26,8 +26,7 @@ public class Socket {
 		public void run() {
 			String url = "opcua:tcp://server:4840?discovery=false";
 			System.out.println("Starting Thread");
-			PlcConnectionManager connectionManager = PlcDriverManager.getDefault()
-				.getConnectionManager();
+			PlcConnectionManager connectionManager = PlcDriverManager.getDefault().getConnectionManager();
 			try (PlcConnection connection = connectionManager.getConnection(url)) {
 				if (connection.isConnected()) {
 					System.out.println("Connected with success!");
