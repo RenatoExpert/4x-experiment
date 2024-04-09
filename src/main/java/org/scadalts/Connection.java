@@ -35,7 +35,7 @@ public class Connection implements AutoCloseable {
 			System.out.println("Connection not estabilished!");
 		}
 	}
-	public Response read(String[][] tagList) {
+	public ReadResponse read(String[][] tagList) {
 		PlcReadRequest.Builder builder = connection.readRequestBuilder();
 		for (String[] tag: tagList) {
 			builder.addTagAddress(tag[0], tag[1]);
