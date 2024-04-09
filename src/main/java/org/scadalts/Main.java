@@ -12,6 +12,9 @@ public class Main {
 				{"Output Pressure", "ns=2;i=11"}
 			};
 			pyserver.read(tagList).print();
+		} catch(Exception error) {
+			System.out.println("Connection failed");
+			System.out.println(error);
 		}
 	}
 }
