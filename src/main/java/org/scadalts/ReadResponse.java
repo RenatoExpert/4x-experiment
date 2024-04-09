@@ -9,7 +9,7 @@ public class ReadResponse {
 	}
 	public void print() {
 		for (String tagName: raw.getTagNames()) {
-			String value = raw.getObject(tagName);
+			Object value = raw.getObject(tagName);
 			System.out.println(String.format("%s => %s", tagName, value));
 		}
 	}
