@@ -5,7 +5,7 @@ my $deps_file = './deps.txt';
 sub get_links {
 	open(IC, '<', $deps_file) or die($!);
 	while(<IC>) {
-		if( $_ =~ /(https**.jar)/i ) {
+		if( $_ =~ m/https*.jar/ ) {
 			return $_;
 		}
 	}
