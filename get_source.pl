@@ -3,13 +3,15 @@ use strict;
 
 my $deps_file = './deps.txt';
 sub get_links {
+	my @links;
 	open(IC, '<', $deps_file) or die($!);
 	while(<IC>) {
 		if( $_ =~ m/https*.jar/ ) {
-			return $_;
+			push @links, $_;
 		}
 	}
 	close(IC);
+	return @links
 }
 
 sub write_list {
@@ -19,6 +21,6 @@ sub write_list {
 	close(OF);
 }
 
-my $links = get_links();
-write_list($links);
+my @links = get_links();
+write_list(@links);
 
