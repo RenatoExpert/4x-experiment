@@ -7,6 +7,7 @@ sub get_links {
 	open(IC, '<', $deps_file) or die($!);
 	while(<IC>) {
 		if( $_ =~ m/https*.jar/ ) {
+			print 'found a link';
 			push @links, $_;
 		}
 	}
