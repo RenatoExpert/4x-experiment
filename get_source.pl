@@ -17,6 +17,7 @@ sub get_links {
 sub write_list {
 	my $output_file = 'links.txt';
 	open(OF, '>>', $output_file);
+	my $link;
 	foreach $link (@_) {
 		print OF $link or die($!);
 	}
