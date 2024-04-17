@@ -6,9 +6,10 @@ sub get_links {
 	my @links;
 	open(IC, '<', $deps_file) or die($!);
 	while(<IC>) {
-		if ($_ !~ (m/apache\/maven) {
-			if( $_ =~ m/https(?-s:.*)jar/ ) {
-				push @links, $&;
+		if( $_ =~ m/https(?-s:.*)jar/ ) {
+			my $link = $&;
+			if( $link !~ m/apache\/maven/ ) {
+				push @links, $link;
 			}
 		}
 	}
