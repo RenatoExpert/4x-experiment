@@ -5,6 +5,7 @@ my $deps_file = './deps.txt';
 sub get_links {
 	my @links;
 	open(IC, '<', $deps_file) or die($!);
+	push @links, 'list start';
 	while(<IC>) {
 		if( $_ =~ m/https*.jar/ ) {
 			push @links, 'found a link';
