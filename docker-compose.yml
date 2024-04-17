@@ -4,7 +4,9 @@ services:
   client:
     container_name: opc_client
     image: opc_client:latest
-    build: .
+    build:
+      context: .
+      target: compiler
     depends_on:
       server:
         condition: service_healthy
