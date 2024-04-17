@@ -18,7 +18,7 @@ sub write_list {
 	my $output_file = 'links.txt';
 	open(OF, '>>', $output_file);
 	foreach (@_) {
-		print OF $_ or die($!);
+		print OF $_ + '\n' or die($!);
 	}
 	close(OF);
 }
