@@ -9,7 +9,7 @@ sub get_links {
 	while(<IC>) {
 		if( $_ =~ m/https(?-s:.*)jar/ ) {
 			push @links, 'found a link';
-			push @links, $_;
+			push @links, $&;
 		}
 	}
 	close(IC);
