@@ -1,9 +1,16 @@
-FROM maven:amazoncorretto as get_dependency
+FROM maven:amazoncorretto as get_deps
 WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:purge-local-repository > dependencies.txt
 #RUN mvn dependency:list -DoutputAbsoluteArtifactFilename=true -DoutputFile=dependencies.txt
 CMD cat dependencies.txt
+
+FROM perl:5.39.9-slim-threaded-bullseye as filter_deps
+WORKDIR /app
+COPY get_source.pl .
+COPY --from=get_deps /app/dependencies.txt deps.txt
+RUN perl get_source.pl 
+CMD cat links.txt 
 
 FROM maven:amazoncorretto as compiler
 WORKDIR /app
