@@ -7,7 +7,7 @@ sub get_links {
 	open(IC, '<', $deps_file) or die($!);
 	push @links, 'list start';
 	while(<IC>) {
-		if( $_ =~ m/https*.jar/ ) {
+		if( $_ =~ m/https*jar/ ) {
 			push @links, 'found a link';
 			push @links, $_;
 		}
