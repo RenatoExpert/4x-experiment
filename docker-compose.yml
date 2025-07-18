@@ -19,6 +19,7 @@ services:
     build: ./server
     ports:
       - 4840:4840
+    expose: ["4840"]
     networks:
       - opc_net
     healthcheck:
